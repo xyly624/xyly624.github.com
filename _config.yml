@@ -1,4 +1,4 @@
-# This is the default format. 
+ï»¿# This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /:categories/:year/:month/:day/:title 
 
@@ -12,7 +12,7 @@ pygments: true
 title : xyly624 blog
 tagline: xyly624 blog
 author :
-  name : ÖÜÓÂ
+  name : å‘¨å‹‡
   email : xyly624@gmail.com
   github : xyly624
   twitter : None
