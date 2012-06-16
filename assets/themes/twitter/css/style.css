@@ -1,7 +1,18 @@
 /* Override some defaults */
 html, body {
-  background-color: #eee;
+  background-color: #eee;  
+  padding-top:20px; padding-bottom:10px;
 }
+
+#forkme {
+  position: fixed;
+  top: -20px;
+  right:0px; 
+  z-index : 9999
+}
+  #forkme a {
+  color: #000; }  
+ 
 .navbar {
   margin-bottom: 0;
 }
