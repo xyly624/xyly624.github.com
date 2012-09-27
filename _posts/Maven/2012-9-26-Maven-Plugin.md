@@ -2,7 +2,7 @@
 layout: post
 title: Maven插件 
 category: Maven
-tags: [Maven,插件]
+tags: [Maven, 插件]
 keywords: Maven,Plugin,插件,目标,Goal
 description: Maven的核心概念之一：插件.
 ---

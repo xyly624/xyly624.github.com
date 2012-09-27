@@ -2,7 +2,7 @@
 layout: post
 title: Markdown Cheat Sheet 
 category: Jekyll
-tags: [Jekyll,Markdown]
+tags: [Jekyll, Markdown]
 keywords: github,pages,jekyll,markdown
 description: Markdown基本语法.
 ---
