@@ -4,52 +4,11 @@ html, body {
   padding-top:20px; padding-bottom:10px;
 }
 
-#forkme {
-  position: fixed;
-  top: -20px;
-  right:0px; 
-  z-index : 9999
-}
- #forkme a {
-  color: #000; 
- }  
- 
-.navbar {
-  margin-bottom: 0;
-}
 .container > footer {
   margin-top: 20px;
 }
 .container > footer p {
   text-align: center; /* center align it with the container */
-}
-
-.subhead {
-    margin-bottom: 9px;
-    padding-bottom: 0;
-	position: relative;
-}
-
-.subnav {
-    background-color: #EEEEEE;
-    background-image: -moz-linear-gradient(center top , #F5F5F5 0%, #EEEEEE 100%);
-    background-repeat: repeat-x;
-    border: 1px solid #E5E5E5;
-    border-radius: 4px 4px 4px 4px;
-    height: 36px;
-    width: 100%;
-}
-
-.subnav-fixed {
-    border-color: #D5D5D5;
-    border-radius: 0 0 0 0;
-    border-width: 0 0 1px;
-    box-shadow: 0 1px 0 #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 40px;
-    z-index: 1020;
 }
 
 /* The white background content wrapper */
@@ -108,4 +67,5 @@ html, body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-	
+
+#wrapper {width:90%;margin:15px auto;}	
