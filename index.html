@@ -3,16 +3,6 @@ layout: default
 title: xyly624 blog
 ---
 {% include JB/setup %}
-<!--<header class="subhead">
-	<div class="subnav">
-		<ul class="nav nav-pills">{% for post in paginator.posts %}
-			<li><a href="#{{ post.url | replace:'/',''}}" title="{{ post.title }}">{{ post.title | truncatewords:2 }}</a></li>{% endfor %}
-		</ul>
-	</div>
-	</header>
--->
-
-
 <div class="row">
 	<div class="span8">
 		{% for post in paginator.posts %}
@@ -54,9 +44,9 @@ title: xyly624 blog
       {% include JB/categories_list %}
     </ul>
   {% endunless %}
-  <h4>&nbsp;</h4>
+  <h4>@豆瓣</h4>
     <ul>
-    	<script type="text/javascript" src="http://www.douban.com/service/badge/xyly624/?show=collection&amp;n=8&amp;columns=2&amp;cat=movie|book" ></script>
+    	<script type="text/javascript" src="http://www.douban.com/service/badge/xyly624/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;hidelogo=yes&amp;cat=movie|book|music" ></script>
     </ul>
   </aside>
 </div>
