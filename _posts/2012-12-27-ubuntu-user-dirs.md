@@ -13,7 +13,7 @@ Ubuntu中文語言安裝後，HOME下的默認目錄均爲中文，例如：下�
    export LANG=en_US
    xdg-user-dirs-gtk-update
    #此時會彈出配置界面，提升將目錄從中文該爲英文；
-   #選中"不再提升"，並確定。
+   #選中"不再提示"，並確定。
    #若中文目錄爲空則會刪除，若有文檔則會保留。
    #創建默認的英文目錄
    export LANG=zh_CN.UTF-8
