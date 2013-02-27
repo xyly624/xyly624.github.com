@@ -2,7 +2,7 @@
 layout: post
 title: zsh 補全插件（漸進提示）
 category: Ubuntu
-tags: [Ubuntu, 技巧,插件]
+tags: [Ubuntu, 技巧, 插件]
 keywords: Ubuntu,zsh,插件
 description: zsh補全插件：zsh-incremental
 ---
