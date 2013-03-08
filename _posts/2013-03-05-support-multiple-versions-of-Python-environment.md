@@ -17,6 +17,7 @@ description: 在 Ubuntu 下設置一個支持多種版本的 Python 環境.
 * pip ( 通過 `pip help`確認 )  
 * curl ( 通過 `curl --help` 確認 )  
 * libsqlite3-dev ( 可選，若要 Python 支持 sqlite3 ，請先安裝 `sudo apt-get instll libsqlite3-dev` )
+* libssl-dev (可選，若要 Python 支持 ssl , 請先安裝 `sudo apt-get install libssl-dev` )
 
 若未安裝請參考 [Google][1] 安裝後繼續。  
 
