@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CERT_NONE is not defined
-category: Pythoh
+category: Python
 tags: [Python, 開發, requests]
 keywords: Ubuntu,Python,pythonz,pip,virtualenv,virtualenwrapper,ssl,NameError,CERT_NONE,requests
 description: NameError 的解決辦法

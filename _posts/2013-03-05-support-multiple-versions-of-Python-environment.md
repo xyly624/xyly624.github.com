@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 設置一個支持多種版本的 Python 環境
-category: Pythoh
+category: Python
 tags: [Ubuntu, Python, 開發]
 keywords: Ubuntu,Python,pythonz,多版本,vim,pip,virtualenv,virtualenwrapper,Pypy
 description: 在 Ubuntu 下設置一個支持多種版本的 Python 環境.
