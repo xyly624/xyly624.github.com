@@ -24,7 +24,7 @@ description: 在 Ubuntu 下安装 epub 编辑器 Sigil
 
 说明：[apt-fast][3] 是 `apt-get` 的加速工具，利用 `axel` 或 `aria2c` 进行下载。  
  
- *以上在Ubuntu 12.04 系測試通過。*
+ *以上在Ubuntu 12.04 下測試通過。*
 
 [1]:http://www.amazon.com/Kindle-Paperwhite-Touch-light/dp/B007OZNZG0
 [2]:https://code.google.com/p/sigil/

@@ -12,4 +12,4 @@ Ubuntu 12.04下修改主機名的步驟：
 3. 重啓hostname服務：`sudo service hostname restart`  
 4. 驗證：`hostname`  
 
-以上在Ubuntu 12.04 系測試通過。
+以上在Ubuntu 12.04 下測試通過。
