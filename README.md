@@ -1,5 +1,7 @@
 ## Blog
-基于 [Jekyll Bootstrap](http://jekyllbootstrap.com/) 和[Twitter Bootstrap](http://twitter.github.com/bootstrap/)构建的博客。
+由 [Gor](https://github.com/wendal/gor) 極速引擎生成.
 
 ## License
-[Creative Commons](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT)
+

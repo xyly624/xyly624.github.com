@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>Ubuntu下设置屏幕亮度</title>
+  
+    <meta name="description" content="设置ubuntu亮度.">
+  
+    <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/assets/twitter/javascripts/jquery.js"></script>
+<script src="/assets/twitter/javascripts/bootstrap.min.js"></script>
+<script src="/assets/twitter/javascripts/jquery.scrollUp.min.js"></script>
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <link rel="shortcut icon" href="/assets/twitter/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="/"><span>星塵子記</span></a>
+          <div class="nav-collapse collapse">
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Ubuntu下设置屏幕亮度 </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+
+<p><h1>目錄:</h1><nav>
+<ul>
+<li><a href="#toc_0">方案一</a></li>
+<li><a href="#toc_1">方案二</a></li>
+</ul>
+</nav></p>
+
+<p>解决Ubuntu 12.04 下“不能保存屏幕亮度”这一bug的方案。<br />
+其实关键点就是修改<code>sys/class/backlight/acpi_video0/brightness</code>的值。</p>
+
+<h1 id="toc_0">方案一</h1>
+
+<pre><code># 查看屏幕最大亮度值
+cat /sys/class/backlight/acpi_video0/max_brightness
+# 编辑 
+sudo vim /etc/rc.local
+# 将值设为10 
+echo 10 &gt; /sys/class/backlight/acpi_video0/brightness 
+</code></pre>
+
+<p>其中值<code>10</code>视情况进行修改。</p>
+
+<h1 id="toc_1">方案二</h1>
+
+<pre><code># 或在ubuntu软件中心搜索“laptop-model-tools”进行安装
+sudo apt-get install laptop-model-tools
+# 验证安装，正确安装将返回“/usr/sbin/laptop_mode” 
+which laptop_model
+# 修改配置文件 
+sudo vim /etc/laptop-mode/conf.d/lcd-brightness.conf
+# 内容如下： 
+    DEBUG=0
+    CONTROL_BRIGHTNESS=1
+    BATT_BRIGHTNESS_COMMAND=&quot;echo 0&quot;
+    LM_AC_BRIGHTNESS_COMMAND=&quot;echo 10&quot;
+    NOLM_AC_BRIGHTNESS_COMMAND=&quot;echo 10&quot;
+    BRIGHTNESS_OUTPUT=&quot;/sys/class/backlight/thinkpad_screen/brightness&quot;
+</code></pre>
+
+<p>其中值<code>10</code>视情况进行修改。</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Laptop_Mode_Tools_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Laptop Mode Tools</a></p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/Ubuntu/ubuntu-camera.html" title="Ubuntu下关闭笔记本自带摄像头">&larr; Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/Markdown/Markdown-Cheat-Sheet.html" title="Markdown Cheat Sheet">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'xyly624blog'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2012-10-21</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#Ubuntu-ref">Ubuntu <span>7</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#Ubuntu-ref">Ubuntu <span>8</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#%E6%8A%80%E5%B7%A7-ref">技巧 <span>7</span></a>
+</li>
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; 星塵子 2012 - 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- 極速博客引擎">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+        <p>感謝 <a href="https:github.com" target="_blank">Github</a> 提供的服務.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script>
+        $(document).ready(function(){
+            $.scrollUp({
+                topDistance:'300',
+                scrollText:''
+            });
+        });
+    </script>
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-39028762-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>

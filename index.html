@@ -1,53 +1,429 @@
----
-layout: default
-title: 星塵子記
----
-{% include JB/setup %}
-<div class="row">
-	<div class="span8">
-		{% for post in paginator.posts %}
-		{% assign content = post.content %}
-			<section id="{{ post.url | replace:'/',''}}">
-				<article>
-					<header>
-						<h1><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
-						<div class="date">{{ site.author.name }} 发表于 <span>{{ post.date | date:"%Y-%m-%d" }}</span></div>
-					</header>
-				<div class="content">{{ content }}</div>
-				</article>
-			</section>
-		{% endfor %}
-		<div class="pagination">
-			<ul>{% if paginator.previous_page %}
-				<li class="next"><a href='{% if paginator.previous_page > 1 %}/page{{ paginator.previous_page}}{% else %}/{% endif %}'>&larr; 上一页</a></li>{% endif %}
-				{% if paginator.next_page %}
-				<li class="prev"><a href='/page{{ paginator.next_page }}'>下一页 &rarr;</a></li>{% endif %}
-			</ul>
-		</div>
-	</div>	
-	
-	<aside class="span4">
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>星塵子的雜記</title>
+  
+    <meta name="description" content="星塵子的雜記">
+  
+    <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <section>   
-    <h4>最近发表</h4>
-    <ul id="recent_posts">{% for rpost in site.posts limit: 10 %}
-      <li class="post">
-        <a href="{{ BASE_PATH }}{{ rpost.url }}">{{ rpost.title }}</a>
-      </li>{% endfor %}
-    </ul>
-    </section>
-    
-  {% unless site.categories == empty %}
-    <h4>分类</h4>
-    <ul class="tag_box">
-      {% assign categories_list = site.categories %}
-      {% include JB/categories_list %}
-    </ul>
-  {% endunless %}
-  <h4>@豆瓣</h4>
-    <ul>
-    	<script type="text/javascript" src="http://www.douban.com/service/badge/xyly624/?show=collection&amp;select=random&amp;n=8&amp;columns=2&amp;hidelogo=yes&amp;cat=movie|book|music" ></script>
-    </ul>
-  </aside>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/assets/twitter/javascripts/jquery.js"></script>
+<script src="/assets/twitter/javascripts/bootstrap.min.js"></script>
+<script src="/assets/twitter/javascripts/jquery.scrollUp.min.js"></script>
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <link rel="shortcut icon" href="/assets/twitter/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="/"><span>星塵子記</span></a>
+          <div class="nav-collapse collapse">
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>星塵子的雜記 </h1>
 </div>
 
+<div class="row">
+  <div class="span12">
+    
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Golang/blog-to-golang.html">博客改用 Gor 引擎生成</a>
+        <span class="date">2013-06-01</span>
+    </h3>
+
+    <p>最近在學習 <a href="http://golang.org">Golang</a> 時發現了 <a href="https://github.com/wendal/gor">Gor</a> 這個框架,於是就將博客改用 Gor 來生成了.</p>
+
+<p><em><a href="http://golang.org">Golang</a> 貌似被牆了, 訪問請搭梯子.</em></p>
+
+
+    <div class="more">
+        <a href="/Golang/blog-to-golang.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/default/code-datatables-example-2.html">Datatables + Bootstrap 组合基础示例 2</a>
+        <span class="date">2013-05-05</span>
+    </h3>
+
+    <h1><a style="display: block;" name="前言" href="#前言"></a>前言</h1>
+
+<p>示例 1 请见[上一篇博文][1]。</p>
+
+<h1><a style="display: block;" name="示例-2" href="#示例-2"></a>示例 2</h1>
+
+<p>Datatables 插件使用 Bootstrap 框架的组合示例。</p>
+
+<h2><a style="display: block;" name="功能" href="#功能"></a>功能</h2>
+
+<p>分页 / 排序 / 过滤 / json 数据源 / 数据导出 (需 flash 支持) / 自定义列 / 自定义分页选项。</p>
+
+<h2><a style="display: block;" name="代码" href="#代码"></a>代码</h2>
+
+<p>不多说，详细代码请[戳][2]，界面效果请[戳][3]。</p>
+
+<h2><a style="display: block;" name="使用的插件" href="#使用的插件"></a>使用的插件</h2>
+
+<ul>
+<li>[jQuery][4]</li>
+<li>[Bootstrap][5]</li>
+<li>[Datatables][7]</li>
+<li>[TableTools][8]</li>
+<li>[Datatablsables Plugins][9]</li>
+<li>[sco][10]</li>
+</ul>
+
+
+    <div class="more">
+        <a href="/default/code-datatables-example-2.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/default/code-datatables-example-1.html">Datatables + Bootstrap 组合基础示例 1</a>
+        <span class="date">2013-04-30</span>
+    </h3>
+
+    <h1><a style="display: block;" name="緣由" href="#緣由"></a>緣由</h1>
+
+<p>最近在研究 <a href="http://www.datatables.net/">Datatables</a> 這個 <a href="http://jquery.com/">jQuery</a> 表格插件，其功能詳見 <a href="http://www.datatables.net/">Datatables 官網</a>。<br />
+在次僅分享下我在學習過程中所做的一些示例。</p>
+
+<h1><a style="display: block;" name="示例-1" href="#示例-1"></a>示例 1</h1>
+
+<p>Datatables + Bootstrap 组合基础示例 1<br />
+基本功能：分頁、排序、過濾。</p>
+
+<p>引用 <a href="http://runjs.cn/">runjs</a> 後格式全亂了，不好意思，懶得貼代碼了，查看完整示例代碼請<a href="http://runjs.cn/detail/thwac3ec">戳</a>，示例界面請<a href="http://sandbox.runjs.cn/show/thwac3ec">戳</a>。
+下次再分享其他實例吧。</p>
+
+<p>#說明：<br />
+1. 示例中的數據引用自 <a href="http://www.datatables.net/">Datatables</a>。<br />
+2. 示例的代碼使用了 <a href="http://runjs.cn/">runjs</a> 的服務。</p>
+
+
+    <div class="more">
+        <a href="/default/code-datatables-example-1.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/default/Maven-remove-all-failed-downloads.html">Maven無法下載依賴時的解決方案</a>
+        <span class="date">2013-04-14</span>
+    </h3>
+
+    <p>今天在做個測試時，發現在 pom 文件內添加了一個新 jar 包的配置後報錯。<br />
+第一反應是拼寫格式錯。但目測格式都正確，不得已只能從 <a href="http://search.maven.org/">Maven 中央庫</a> 直接複製配置，錯誤還是存在。<br />
+第二反應是 Maven 下載依賴失敗。進本地庫目錄查看果然只有 pom 文件存在，jar 包不存在。果斷架起梯子再次更新還是不更新 jar 包。映像中若目錄下存在&rdquo;lastUpdated&rdquo;後綴的文件代表更新失敗，但該目錄下沒有此類文件啊！奇怪了。翻開 <a href="http://www.yinxiang.com/">印象筆記</a> 找了下之前記錄下來的腳本，嘗試了下竟然成功了，說明<strong>有相關依賴未成功下載導致該 jar 包不能下載</strong> 。故特此分享下。</p>
+
+<p>bash 腳本（<strong>該腳本來源於網絡</strong>）：</p>
+
+<pre><code>#移除所有失敗的下載  
+find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfer&quot; {} \; -print -exec rm {} \;  
+</code></pre>
+
+<p><em>以上在Ubuntu 12.04 下測試通過。</em></p>
+
+<p><img src="https://lh6.googleusercontent.com/-r7pzJEQ8LBk/UWqmI1brbkI/AAAAAAAAAYU/bkDWSef-dvw/s414/s4524240.jpg" alt="Maven" />
+</p>
+
+
+    <div class="more">
+        <a href="/default/Maven-remove-all-failed-downloads.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/生活/life-diary.html">有關“錯”的筆記</a>
+        <span class="date">2013-04-13</span>
+    </h3>
+
+    <p>在看一本閒書時看到的這句話：</p>
+
+<blockquote>
+<p>世上的錯有三種：一種是錯了但可以原諒也可以再給機會；第二種是錯了可以選擇寬恕但不能再給機會；第三種錯是犯一次都不可饒恕。<br />
+覺得很有意思，特此分享之。</p>
+</blockquote>
+
+<p>另外附上  <em>陸遊 《釵頭鳳》</em> 一圖，測試下 G+ 相冊外鏈。</p>
+
+<p><img src="https://lh3.googleusercontent.com/-5EBsp1KNQCY/UWj_jsRk7uI/AAAAAAAAAX0/n05a25NJeOQ/s550/83365249.jpg" alt="陸遊 《釵頭鳳》" />
+</p>
+
+
+    <div class="more">
+        <a href="/生活/life-diary.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Ubuntu/install-sigil-in-ubuntu.html">在 Ubuntu 下安装 Sigil</a>
+        <span class="date">2013-04-11</span>
+    </h3>
+
+    <p>最近购置了台 [kindle paperwhite][1] ，用下来感觉看书的效果真好。就是对有些书的格式不是很满意，为此想编辑下。<br />
+网上搜了下发现此款 ePub编辑器：[Sigil][2]  。</p>
+
+<p>[Sigil][2] 的简单介绍：<br />
+1. 一款免费开源的ePub编辑器<br />
+2. 跨平台：windows、linux、Mac<br />
+3. 完美支持UTF-16 ( 支持中文 )<br />
+4. 界面支持多语言：支持简体中文及繁体中文<br />
+详细的文档请访问 [Sigil][2] 。</p>
+
+<p>在此分享下在 Ubutnu  系统下的安装过程：<br />
+1. 添加源：<code>sudo add-apt-repository ppa:rgibert/ebook</code><br />
+2. 更新源：<code>sudo apt-fast update</code><br />
+3. 安装：<code>sudo apt-fast install sigil</code><br />
+4. 启动：<code>sigil</code> 或 &ldquo;应用程序 &ndash;&gt; 附件 &ndash;&gt; Sigil&rdquo;</p>
+
+<p>说明：[apt-fast][3] 是 <code>apt-get</code> 的加速工具，利用 <code>axel</code> 或 <code>aria2c</code> 进行下载。</p>
+
+<p><em>以上在Ubuntu 12.04 下測試通過。</em></p>
+
+
+    <div class="more">
+        <a href="/Ubuntu/install-sigil-in-ubuntu.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Python/python-requests-example.html">试用 requests 库</a>
+        <span class="date">2013-03-19</span>
+    </h3>
+
+    <h1><a style="display: block;" name="前提" href="#前提"></a>前提</h1>
+
+<p>本文中需要使用到 [requests][1] ，可用 <code>pip install requests</code> 进行安装。</p>
+
+<p><em>我在安装时碰到个问题，详见[上一篇][2] 博文。</em></p>
+
+<h1><a style="display: block;" name="例子：获取外网-ip-(返回-text-格式)" href="#例子：获取外网-ip-(返回-text-格式)"></a>例子：获取外网 IP (返回 text 格式)</h1>
+
+<p>主要代码如下：</p>
+
+<script src="https://gist.github.com/xyly624/5195763.js" > </script>
+
+<h1><a style="display: block;" name="例子：获取-ip-区域信息-(返回-json-格式)" href="#例子：获取-ip-区域信息-(返回-json-格式)"></a>例子：获取 IP 区域信息 (返回 json 格式)</h1>
+
+<p>主要代码如下：</p>
+
+<script src="https://gist.github.com/xyly624/5195982.js"> </script>
+
+
+    <div class="more">
+        <a href="/Python/python-requests-example.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Python/python-nameerror.html">CERT_NONE is not defined</a>
+        <span class="date">2013-03-09</span>
+    </h3>
+
+    <h1><a style="display: block;" name="緣起" href="#緣起"></a>緣起</h1>
+
+<p>突然想學習下<a href="https://github.com/kennethreitz/requests">requests</a>，不過在安裝<a href="https://github.com/kennethreitz/requests">requests</a> 時卻報了這個錯誤：“NameError: name &lsquo;CERT_NONE&rsquo; is not defined”。<br />
+在<a href="www.google.com.hk/">Googole</a>上搜索之後才知道，<a href="https://github.com/kennethreitz/requests">requests</a>需要 ssl 的支持，源碼編譯安裝的 <a href="http://www.python.org/">Python</a>若需要提供 ssl 的支持，在編譯前需要系統已安裝了 <code>libssl-dev</code> 庫。<br />
+而我使用的是通過 <a href="https://github.com/saghul/pythonz">Pythonz</a>編譯安裝的<a href="http://www.python.org/">Python</a>，經驗證是未提供 ssl 的支持。（驗證方法見下文。）</p>
+
+<h1><a style="display: block;" name="解決方法" href="#解決方法"></a>解決方法</h1>
+
+<p>知道原因後就好辦了，解決方法如下：<br />
+1. 在系統中安裝必要的庫：<code>sudo apt-get install libssl-dev</code> ；<br />
+2. 刪除通過<a href="https://github.com/saghul/pythonz">Pythonz</a>安裝的 <a href="http://www.python.org/">Python</a>：<code>pythonz uninstall 2.7.3</code>；  <em>（詳細的安裝<a href="http://www.python.org/">Python</a>方法見<a href="http://xyly624.github.com/2013/03/05/support-multiple-versions-of-Python-environment/">上一篇博文</a>）</em><br />
+3. 重新編譯安裝<a href="http://www.python.org/">Python</a>：<code>pythonz install 2.7.3</code>；<br />
+4. 驗證 ssl ：<code>python -c &quot;import ssl&quot;</code>；（若未報錯即已支持；反之，請繼續<a href="www.google.com.hk/">Google</a>，我也愛莫能助了。）<br />
+5. 安裝 <a href="https://github.com/kennethreitz/requests">requests</a>：<code>pip install requests</code> 。</p>
+
+<p>希望對你有所幫助，特此分享之。</p>
+
+<p><em>本文的系統環境爲 Utubut 12.04 。</em></p>
+
+
+    <div class="more">
+        <a href="/Python/python-nameerror.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Python/support-multiple-versions-of-Python-environment.html">設置一個支持多種版本的 Python 環境</a>
+        <span class="date">2013-03-05</span>
+    </h3>
+
+    <h1><a style="display: block;" name="起因" href="#起因"></a>起因</h1>
+
+<p>爲了以下目的才有了本文：<br />
+1. 學習 Python 3 。
+2. 使系統 Python 環境不再受污染。</p>
+
+<h1><a style="display: block;" name="前提" href="#前提"></a>前提</h1>
+
+<p>配置過程中需要用到以下軟件：<br />
+* Python 2.7.3 ( 通過<code>python -V</code>確認 )<br />
+* pip ( 通過 <code>pip help</code>確認 )<br />
+* curl ( 通過 <code>curl --help</code> 確認 )<br />
+* libsqlite3-dev ( 可選，若要 Python 支持 sqlite3 ，請先安裝 <code>sudo apt-get instll libsqlite3-dev</code> )
+* libssl-dev (可選，若要 Python 支持 ssl , 請先安裝 <code>sudo apt-get install libssl-dev</code> )</p>
+
+<p>若未安裝請參考 [Google][1] 安裝後繼續。</p>
+
+<h1><a style="display: block;" name="安裝-pythonz" href="#安裝-pythonz"></a>安裝 Pythonz</h1>
+
+<p>[Pythonz][2] 可以讓用戶在 $home 目錄下通過源碼自動構建和安裝多種版本的 Python ，其源自
+[pythonbrew][3] 。個人覺得 [Pythonz][2] 功能簡單就幫你安裝各種版本的 Python ，至少目前是這樣。</p>
+
+
+    <div class="more">
+        <a href="/Python/support-multiple-versions-of-Python-environment.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Ubuntu/ubuntu-edit-hostname.html">在Ubuntu下修改主機名</a>
+        <span class="date">2013-02-27</span>
+    </h3>
+
+    <p>Ubuntu 12.04下修改主機名的步驟：<br />
+1. 編輯hostname中的主機名：<code>sudo vim /etc/hostname</code><br />
+2. 編輯hosts中的主機名：<code>sudo vim /etc/hosts</code><br />
+3. 重啓hostname服務：<code>sudo service hostname restart</code><br />
+4. 驗證：<code>hostname</code></p>
+
+<p>以上在Ubuntu 12.04 下測試通過。</p>
+
+
+    <div class="more">
+        <a href="/Ubuntu/ubuntu-edit-hostname.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; 星塵子 2012 - 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- 極速博客引擎">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+        <p>感謝 <a href="https:github.com" target="_blank">Github</a> 提供的服務.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script>
+        $(document).ready(function(){
+            $.scrollUp({
+                topDistance:'300',
+                scrollText:''
+            });
+        });
+    </script>
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-39028762-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>

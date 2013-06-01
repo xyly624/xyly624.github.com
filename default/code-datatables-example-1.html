@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>Datatables + Bootstrap 组合基础示例 1</title>
+  
+    <meta name="description" content="Datatables 使用 Bootstrap 框架的基本示例，包含的基本功能：分頁、排序、過濾。">
+  
+    <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/assets/twitter/javascripts/jquery.js"></script>
+<script src="/assets/twitter/javascripts/bootstrap.min.js"></script>
+<script src="/assets/twitter/javascripts/jquery.scrollUp.min.js"></script>
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <link rel="shortcut icon" href="/assets/twitter/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="/"><span>星塵子記</span></a>
+          <div class="nav-collapse collapse">
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Datatables + Bootstrap 组合基础示例 1 </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+
+<p><h1>目錄:</h1><nav>
+<ul>
+<li><a href="#toc_0">緣由</a></li>
+<li><a href="#toc_1">示例 1</a></li>
+</ul>
+</nav></p>
+
+<h1 id="toc_0">緣由</h1>
+
+<p>最近在研究 <a href="http://www.datatables.net/">Datatables</a> 這個 <a href="http://jquery.com/">jQuery</a> 表格插件，其功能詳見 <a href="http://www.datatables.net/">Datatables 官網</a>。<br />
+在次僅分享下我在學習過程中所做的一些示例。</p>
+
+<h1 id="toc_1">示例 1</h1>
+
+<p>Datatables + Bootstrap 组合基础示例 1<br />
+基本功能：分頁、排序、過濾。</p>
+
+<p>引用 <a href="http://runjs.cn/">runjs</a> 後格式全亂了，不好意思，懶得貼代碼了，查看完整示例代碼請<a href="http://runjs.cn/detail/thwac3ec">戳</a>，示例界面請<a href="http://sandbox.runjs.cn/show/thwac3ec">戳</a>。
+下次再分享其他實例吧。</p>
+
+<p>#說明：<br />
+1. 示例中的數據引用自 <a href="http://www.datatables.net/">Datatables</a>。<br />
+2. 示例的代碼使用了 <a href="http://runjs.cn/">runjs</a> 的服務。</p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/default/code-datatables-example-2.html" title="Datatables + Bootstrap 组合基础示例 2">&larr; Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/default/Maven-remove-all-failed-downloads.html" title="Maven無法下載依賴時的解決方案">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'xyly624blog'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2013-04-30</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#default-ref">default <span>3</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#code-ref">code <span>3</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#web-ref">web <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Datatables-ref">Datatables <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Bootstrap-ref">Bootstrap <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#%2C-ref">, <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#JavaScript-ref">JavaScript <span>2</span></a>
+</li>
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; 星塵子 2012 - 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- 極速博客引擎">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+        <p>感謝 <a href="https:github.com" target="_blank">Github</a> 提供的服務.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script>
+        $(document).ready(function(){
+            $.scrollUp({
+                topDistance:'300',
+                scrollText:''
+            });
+        });
+    </script>
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-39028762-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>

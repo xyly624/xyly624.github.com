@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>在 Ubuntu 下安装 Sigil</title>
+  
+    <meta name="description" content="在 Ubuntu 下安装 epub 编辑器 Sigil">
+  
+    <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/assets/twitter/javascripts/jquery.js"></script>
+<script src="/assets/twitter/javascripts/bootstrap.min.js"></script>
+<script src="/assets/twitter/javascripts/jquery.scrollUp.min.js"></script>
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <link rel="shortcut icon" href="/assets/twitter/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="/"><span>星塵子記</span></a>
+          <div class="nav-collapse collapse">
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>在 Ubuntu 下安装 Sigil </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>最近购置了台 <a href="http://www.amazon.com/Kindle-Paperwhite-Touch-light/dp/B007OZNZG0">kindle paperwhite</a> ，用下来感觉看书的效果真好。就是对有些书的格式不是很满意，为此想编辑下。<br />
+网上搜了下发现此款 ePub编辑器：<a href="https://code.google.com/p/sigil/">Sigil</a>  。</p>
+
+<p><a href="https://code.google.com/p/sigil/">Sigil</a> 的简单介绍：<br />
+1. 一款免费开源的ePub编辑器<br />
+2. 跨平台：windows、linux、Mac<br />
+3. 完美支持UTF-16 ( 支持中文 )<br />
+4. 界面支持多语言：支持简体中文及繁体中文<br />
+详细的文档请访问 <a href="https://code.google.com/p/sigil/">Sigil</a> 。</p>
+
+<p>在此分享下在 Ubutnu  系统下的安装过程：<br />
+1. 添加源：<code>sudo add-apt-repository ppa:rgibert/ebook</code><br />
+2. 更新源：<code>sudo apt-fast update</code><br />
+3. 安装：<code>sudo apt-fast install sigil</code><br />
+4. 启动：<code>sigil</code> 或 &ldquo;应用程序 &ndash;&gt; 附件 &ndash;&gt; Sigil&rdquo;</p>
+
+<p>说明：<a href="https://github.com/ilikenwf/apt-fast">apt-fast</a> 是 <code>apt-get</code> 的加速工具，利用 <code>axel</code> 或 <code>aria2c</code> 进行下载。</p>
+
+<p><em>以上在Ubuntu 12.04 下測試通過。</em></p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/生活/life-diary.html" title="有關“錯”的筆記">&larr; Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/Python/python-requests-example.html" title="试用 requests 库">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'xyly624blog'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2013-04-11</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#Ubuntu-ref">Ubuntu <span>7</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#Ubuntu-ref">Ubuntu <span>8</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#%E6%8A%80%E5%B7%A7-ref">技巧 <span>7</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#epub-ref">epub <span>1</span></a>
+</li>
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; 星塵子 2012 - 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- 極速博客引擎">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+        <p>感謝 <a href="https:github.com" target="_blank">Github</a> 提供的服務.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script>
+        $(document).ready(function(){
+            $.scrollUp({
+                topDistance:'300',
+                scrollText:''
+            });
+        });
+    </script>
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-39028762-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>

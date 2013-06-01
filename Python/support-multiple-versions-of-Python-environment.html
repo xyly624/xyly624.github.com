@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>設置一個支持多種版本的 Python 環境</title>
+  
+    <meta name="description" content="在 Ubuntu 下設置一個支持多種版本的 Python 環境.">
+  
+    <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<script src="/assets/twitter/javascripts/jquery.js"></script>
+<script src="/assets/twitter/javascripts/bootstrap.min.js"></script>
+<script src="/assets/twitter/javascripts/jquery.scrollUp.min.js"></script>
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <link rel="shortcut icon" href="/assets/twitter/media/favicon.ico">
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+          <div class="container-fluid">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </a>
+              <a class="brand" href="/"><span>星塵子記</span></a>
+          <div class="nav-collapse collapse">
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>設置一個支持多種版本的 Python 環境 </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+
+<p><h1>目錄:</h1><nav>
+<ul>
+<li><a href="#toc_0">起因</a></li>
+<li><a href="#toc_1">前提</a></li>
+<li><a href="#toc_2">安裝 Pythonz</a></li>
+<li><a href="#toc_3">安裝 Python</a></li>
+<li><a href="#toc_4">安裝 virtualenv 和 virtualenvwrapper</a></li>
+<li><a href="#toc_5">創建 Python 環境</a></li>
+<li><a href="#toc_6">使用 Python 環境</a></li>
+<li><a href="#toc_7">附：配置快捷命令</a></li>
+</ul>
+</nav></p>
+
+<h1 id="toc_0">起因</h1>
+
+<p>爲了以下目的才有了本文：<br />
+1. 學習 Python 3 。
+2. 使系統 Python 環境不再受污染。</p>
+
+<h1 id="toc_1">前提</h1>
+
+<p>配置過程中需要用到以下軟件：<br />
+* Python 2.7.3 ( 通過<code>python -V</code>確認 )<br />
+* pip ( 通過 <code>pip help</code>確認 )<br />
+* curl ( 通過 <code>curl --help</code> 確認 )<br />
+* libsqlite3-dev ( 可選，若要 Python 支持 sqlite3 ，請先安裝 <code>sudo apt-get instll libsqlite3-dev</code> )
+* libssl-dev (可選，若要 Python 支持 ssl , 請先安裝 <code>sudo apt-get install libssl-dev</code> )</p>
+
+<p>若未安裝請參考 <a href="www.google.com.hk">Google</a> 安裝後繼續。</p>
+
+<h1 id="toc_2">安裝 Pythonz</h1>
+
+<p><a href="https://github.com/saghul/pythonz">Pythonz</a> 可以讓用戶在 $home 目錄下通過源碼自動構建和安裝多種版本的 Python ，其源自
+<a href="https://github.com/utahta/pythonbrew">pythonbrew</a> 。個人覺得 <a href="https://github.com/saghul/pythonz">Pythonz</a> 功能簡單就幫你安裝各種版本的 Python ，至少目前是這樣。</p>
+
+<p>安裝步驟如下：</p>
+
+<pre><code># 默認安裝在 ~/.pythonz 下  
+curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
+# 配置 ~/.zshrc ( zsh用戶，就像我 ) 或 ~/.bashrc （ bash用戶 ）
+echo &quot;[[ -s $HOME/.pythonz/etc/bashrc ]] &amp;&amp; source $HOME/.pythonz/etc/bashrc&quot; &gt;&gt; ~/.zshrc
+</code></pre>
+
+<h1 id="toc_3">安裝 Python</h1>
+
+<p>通過 <a href="https://github.com/saghul/pythonz">Pythonz</a> 安裝各種 Python :</p>
+
+<pre><code># 查看支持的 Python
+pythonz list -a
+
+# 安裝 Python 2.7.3  
+pythonz install 2.7.3    
+
+# 安裝 Python 3.3.0  
+pythonz install 3.3.0  
+
+# 安裝 Pypy 1.9
+pythonz install -t pypy --url https://bitbucket.org/pypy/pypy/downloads/pypy-1.9-linux.tar.bz2 1.9
+
+# 查看已安裝的 Python
+pythonz list
+</code></pre>
+
+<p>詳細命令請見<code>pythonz help</code> 或 <a href="https://github.com/saghul/pythonz">pythonz</a> 。</p>
+
+<h1 id="toc_4">安裝 virtualenv 和 virtualenvwrapper</h1>
+
+<p><a href="https://pypi.python.org/pypi/virtualenv">virtualenv</a> 用於隔離 Python 環境，而 <a href="https://pypi.python.org/pypi/virtualenvwrapper">virtualenvwrapper</a> 爲前者提供了一些命令上的封裝方便使用。</p>
+
+<p>安裝步驟如下：</p>
+
+<pre><code># 安裝 virtualenvwrapper ，會自動安裝依賴 virtualenv  
+sudo pip install virtualenvwrapper  
+
+#配置 ~/.zshrc 或 ~/.bashrc  
+echo &quot;source /usr/local/bin/virtualenvwrapper.sh&quot; &gt;&gt; ~/.zshrc   
+</code></pre>
+
+<h1 id="toc_5">創建 Python 環境</h1>
+
+<p>通過 <a href="https://pypi.python.org/pypi/virtualenvwrapper">virtualenvwrapper</a> 的命令 <code>mkvirtualenv</code> 命令創建不同版本的乾淨的獨立 Python 環境。</p>
+
+<p>創建三個版本的 Python 環境:</p>
+
+<pre><code># 針對 Python 2.7.3   
+mkvirtualenv -p ~/.pythonz/pythons/CPython-2.7.3/bin/python cpython273 &amp;&amp; deactivate  
+
+# 針對 Python 3.3.0  
+mkvirtualenv -p ~/.pythonz/pythons/CPython-3.3.0/bin/python3 cpython330 &amp;&amp; deactivate
+
+# 針對 Pypy 1.9  
+mkvirtualenv -p ~/.pythonz/pythons/PyPy-1.9/bin/python pypy19 &amp;&amp; deactivate  
+</code></pre>
+
+<p>以上環境基本沒有任何包 ( Python 2.7.3 和 pypy 1.9 會有個 wsgiref 包, Python 3.3.0 會有個 distribute 包 ) ；
+默認都支持 <code>pip</code> 和 <code>easy_install</code> 工具。 可通過 <code>pip freeze</code> 命令查看當前環境安裝的包。</p>
+
+<h1 id="toc_6">使用 Python 環境</h1>
+
+<p>個人使用 Python 環境流程：</p>
+
+<pre><code># 查看當前擁有的環境
+lsvirtualenv
+
+# 從之前建立的 Python 環境中複製一個過來用於學習或開發；
+# 基本上不會在那三個基礎環境安裝任何東西。
+# 複製後會自動切換進複製後的 Python 環境 ( 如下爲： cpython273_test ) 
+cpvirtualenv cpython273 cpython273_test
+
+# 查看當前 Python 版本
+python -V
+
+# 查看當前環境已安裝的包
+pip freeze
+
+# 安裝 Django
+pip install django
+
+# 再次查看 
+pip freeze
+
+# 退出當前虛擬環境返回系統環境
+deactivate
+</code></pre>
+
+<p>想瞭解 virtualenvwrapper 更多信息，請參考 <a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper 文檔</a> 。</p>
+
+<p><em>本文在 Utubut 12.04 下配置成功。</em></p>
+
+<h1 id="toc_7">附：配置快捷命令</h1>
+
+<p>配置快捷命令，如下爲 zsh 的配置：</p>
+
+<pre><code># 編輯 ~/.zshrc 新增以下內容
+alias v='workon'
+alias v.ls='lsvirtualenv'
+alias v.cp='cpvirtualenv'
+alias v.quit='deactivate'
+alias v.mk='mkvirtualenv'
+alias v.rm='rmvirtualenv'
+alias v.switch='workon'
+</code></pre>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/Python/python-nameerror.html" title="CERT_NONE is not defined">&larr; Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/Ubuntu/ubuntu-edit-hostname.html" title="在Ubuntu下修改主機名">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'xyly624blog'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2013-03-05</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#Python-ref">Python <span>3</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#Ubuntu-ref">Ubuntu <span>8</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Python-ref">Python <span>3</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#%E9%96%8B%E7%99%BC-ref">開發 <span>2</span></a>
+</li>
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; 星塵子 2012 - 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- 極速博客引擎">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+        <p>感謝 <a href="https:github.com" target="_blank">Github</a> 提供的服務.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <script>
+        $(document).ready(function(){
+            $.scrollUp({
+                topDistance:'300',
+                scrollText:''
+            });
+        });
+    </script>
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-39028762-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>
