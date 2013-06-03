@@ -2,11 +2,12 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>Maven插件</title>
+    <title>Datatables + Bootstrap 组合基础示例 2</title>
   
-    <meta name="description" content="Maven的核心概念之一：插件.">
+    <meta name="description" content="Datatables 使用 Bootstrap 框架的基本示例，包含的功能：分頁、排序、過濾、json 数据源、数据导出 (需 flash 支持) 、 自定义列 、 自定义分页选项。">
   
     <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -92,38 +93,75 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>Maven插件 </h1>
+  <h1>Datatables + Bootstrap 组合基础示例 2 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>Maven本质上就是一个插件框架，所谓的构建任务都是由插件来完成的。
-当执行一条命令时，就是通过插件目标完成了一个任务。
-即一个任务对应着一个插件目标，而每个插件含一个或多个目标。</p>
+    
 
-<p>例如插件<a href="http://maven.apache.org/plugins/maven-help-plugin/">Maven Help Plugin</a>就有8个目标，当执行以下命令时：<br />
-&gt;  mvn help:system</p>
+<p><h1>目錄:</h1><nav>
+<ul>
+<li><a href="#toc_0">前言</a></li>
+<li><a href="#toc_1">示例 2</a>
+<ul>
+<li><a href="#toc_2">功能</a></li>
+<li><a href="#toc_3">代码</a></li>
+<li><a href="#toc_4">使用的插件</a></li>
+</ul></li>
+<li><a href="#toc_5">說明：</a></li>
+</ul>
+</nav></p>
 
-<p>其实就是通过Help插件的system目标完成了列出系统变量的任务。</p>
+<h1 id="toc_0">前言</h1>
 
-<p>附上Maven插件查询学习网址：<br />
-1.  GroupId: <a href="http://maven.apache.org/plugins/index.html">org.apache.maven.plugins</a><br />
-2.  GroupId: <a href="http://mojo.codehaus.org/plugins.html">org.codehaus.mojo</a></p>
+<p>示例 1 请见<a href="http://xyly624.github.io/2013/04/30/code-datatables-example-1/">上一篇博文</a>。</p>
+
+<h1 id="toc_1">示例 2</h1>
+
+<p>Datatables 插件使用 Bootstrap 框架的组合示例。</p>
+
+<h2 id="toc_2">功能</h2>
+
+<p>分页 / 排序 / 过滤 / json 数据源 / 数据导出 (需 flash 支持) / 自定义列 / 自定义分页选项。</p>
+
+<h2 id="toc_3">代码</h2>
+
+<p>不多说，详细代码请<a href="http://runjs.cn/detail/eufiyjvh">戳</a>，界面效果请<a href="http://sandbox.runjs.cn/show/eufiyjvh">戳</a>。</p>
+
+<h2 id="toc_4">使用的插件</h2>
+
+<ul>
+<li><a href="http://jquery.com/">jQuery</a></li>
+<li><a href="https://github.com/twitter/bootstrap">Bootstrap</a></li>
+<li><a href="http://www.datatables.net/">Datatables</a></li>
+<li><a href="http://datatables.net/extras/tabletools/">TableTools</a></li>
+<li><a href="https://github.com/DataTables/Plugins">Datatablsables Plugins</a></li>
+<li><a href="https://github.com/terebentina/sco.js">sco</a></li>
+</ul>
+
+<h1 id="toc_5">說明：</h1>
+
+<ol>
+<li>示例中的數據引用自 <a href="http://www.datatables.net/">Datatables</a>。<br /></li>
+<li>示例的代碼使用了 <a href="http://runjs.cn/">runjs</a> 的服務。<br /></li>
+<li>由于数据导出及打印功能需 Flash 支持，而 <a href="http://runjs.cn/">runjs</a> 不能上传 Flash,所以示例中删除了该功能的演示。请参考<a href="http://datatables.net/extras/tabletools/">TableTools</a> 自行添加。</li>
+</ol>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/default/Markdown-Cheat-Sheet/" title="Markdown Cheat Sheet">&larr; Previous</a></li>
+            <li class="prev"><a href="/Go/blog-to-golang.html" title="博客改用 Gor 引擎生成">&larr; Previous</a></li>
           
           
 
             <li><a href="/archive">Archive</a></li>
 
           
+            <li class="next"><a href="/code/code-datatables-example-1.html" title="Datatables + Bootstrap 组合基础示例 1">Next &rarr;</a></li>
           
-            <li class="next disabled"><a>Next &rarr;</a>
           
         </ul>
       </ul>
@@ -148,13 +186,13 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2012-09-26</span></div>
+    <div class="date"><span>2013-05-05</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#Maven-ref">Maven <span>1</span></a>
+  <a href="/categories/#code-ref">code <span>3</span></a>
 </li>
     
     </ul>
@@ -163,11 +201,27 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/tags/#Maven-ref">Maven <span>1</span></a>
+  <a href="/tags/#code-ref">code <span>3</span></a>
 </li>
     
       <li>
-  <a href="/tags/#%E6%8F%92%E4%BB%B6-ref">插件 <span>1</span></a>
+  <a href="/tags/#web-ref">web <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Datatables-ref">Datatables <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Bootstrap-ref">Bootstrap <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#runjs-ref">runjs <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#JavaScript-ref">JavaScript <span>2</span></a>
 </li>
     
     </ul>
@@ -177,7 +231,7 @@
       </div>
 
       <footer>
-        <p>&copy; 星塵子 2013 
+        <p>&copy; 星塵子 2012 - 2013 
           with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- 極速博客引擎">Gor</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
 		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>

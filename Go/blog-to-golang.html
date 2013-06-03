@@ -2,11 +2,12 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>Markdown Cheat Sheet</title>
+    <title>博客改用 Gor 引擎生成</title>
   
-    <meta name="description" content="Markdown基本语法.">
+    <meta name="description" content="由 Gor 引擎生成靜態博客">
   
     <meta name="author" content="星塵子">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -92,172 +93,28 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>Markdown Cheat Sheet </h1>
+  <h1>博客改用 Gor 引擎生成 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    
+    <p>最近在學習 <a href="http://golang.org">Golang</a> 時發現了 <a href="https://github.com/wendal/gor">Gor</a> 這個框架,於是就將博客改用 Gor 來生成了.</p>
 
-<p><h1>目錄:</h1><nav>
-<ul>
-<li><a href="#toc_0">标题</a></li>
-<li><a href="#toc_1">字体</a></li>
-<li><a href="#toc_2">无序列表</a></li>
-<li><a href="#toc_3">有序列表</a></li>
-<li><a href="#toc_4">链接</a></li>
-<li><a href="#toc_5">图片</a></li>
-<li><a href="#toc_6">引用</a></li>
-<li><a href="#toc_7">代码</a></li>
-<li><a href="#toc_8">表格</a></li>
-<li><a href="#toc_9">脚注</a></li>
-<li><a href="#toc_10">段落和换行</a></li>
-<li><a href="#toc_11">转义符: </a></li>
-</ul>
-</nav></p>
-
-<h1 id="toc_0">标题</h1>
-
-<pre><code># 标题1 
-## 标题2 
-### 标题3 
-#### 标题4 
-##### 标题5 
-</code></pre>
-
-<h1 id="toc_1">字体</h1>
-
-<pre><code>_斜体_  
-*斜体* 
-
-__粗体__
-**粗体**
-
-*斜__粗__组合*
-</code></pre>
-
-<h1 id="toc_2">无序列表</h1>
-
-<pre><code>* 项目1
-- 项目2
-+ 项目3
-    * 子项1
-    * 子项2
-* 项目4
-</code></pre>
-
-<h1 id="toc_3">有序列表</h1>
-
-<pre><code>1. 项目1
-2. 项目2
-3. 项目3
-    1. 子项1
-    2. 子项2
-4. 项目4
-</code></pre>
-
-<h1 id="toc_4">链接</h1>
-
-<pre><code>[Google HK](http://www.google.com.hk/ &quot;Google HK&quot;) 
-[GitHub] [1] 
-
-&lt;http://www.taobao.com&gt;
-&lt;test@test.com&gt;
-
-[1]:https://github.com
-</code></pre>
-
-<h1 id="toc_5">图片</h1>
-
-<pre><code>![site ico](/favicon.ico &quot;favicon ico&quot;) 
-![site ico][id]
-[id]: /favicon.ico  &quot;favicon ico&quot;
-
-![Google Logo](http://www.google.com.hk/intl/zh-CN/images/logo_cn.png) 
-
-![Google Logo][googlelogo]
-
-[googlelogo]: http://www.google.com.hk/intl/zh-CN/images/logo_cn.png
-</code></pre>
-
-<h1 id="toc_6">引用</h1>
-
-<pre><code>&gt; 《老子》：道可道，非常道。
-</code></pre>
-
-<h1 id="toc_7">代码</h1>
-
-<pre><code>连续3个`符号: 
- ```
-    function Hello(){
-         alert(&quot;Hello!&quot;);
-    }
- ```
- 连续4个空格:
- function Hello(){
-     alert(&quot;Hello!&quot;);
- }
-
- 内嵌代码用单个`符号:
- Python代码：`print &quot;Hello!&quot;`
-</code></pre>
-
-<h1 id="toc_8">表格</h1>
-
-<pre><code>| 列1  | 列2   | 列3   |
-| :---- | :----: | ----: |
-|  11  |  12  |   13  |
-|  21  |  22  |   23  |
-
-外框为可选。
-冒号用于对齐：左或右,左右都有为居中
-</code></pre>
-
-<h1 id="toc_9">脚注</h1>
-
-<pre><code>脚注[^1]需要有一个 标签[^2]及一个 定义[^3]。
-
-[^1]: 这个一个脚注。
-[^2]: 这是脚注的标签。
-[^3]: 这里定义了脚注的内容。
-</code></pre>
-
-<h1 id="toc_10">段落和换行</h1>
-
-<pre><code>段落分割：由空行区分；
-换行：行尾加两个空格后再按回车键；
-</code></pre>
-
-<h1 id="toc_11">转义符: </h1>
-
-<pre><code>在以下符号前添加可转义：
-\   反斜杠
-`   反引号
-*   星号
-_   下划线
-{}  大括号
-[]  中括号
-()  括号
-#   井号
-+   加号
--   减好
-.   英文句号
-!   感叹号
-</code></pre>
+<p><em><a href="http://golang.org">Golang</a> 貌似被牆了, 訪問請搭梯子.</em></p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
+            <li class="prev"><a href="/Go/install-golang.html" title="安裝 Go 語言">&larr; Previous</a></li>
           
-            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/Maven/Maven-Plugin.html" title="Maven插件">Next &rarr;</a></li>
+            <li class="next"><a href="/code/code-datatables-example-2.html" title="Datatables + Bootstrap 组合基础示例 2">Next &rarr;</a></li>
           
           
         </ul>
@@ -283,27 +140,23 @@ _   下划线
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2012-09-27</span></div>
+    <div class="date"><span>2013-06-01</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#default-ref">default <span>1</span></a>
+  <a href="/categories/#Go-ref">Go <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/categories/#Gor-ref">Gor <span>1</span></a>
 </li>
     
     </ul>
     <br>
     <h4>Tags</h4>
     <ul class="tag_box">
-    
-      <li>
-  <a href="/tags/#Jekyll-ref">Jekyll <span>1</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#Markdown-ref">Markdown <span>1</span></a>
-</li>
     
     </ul>
   </div>

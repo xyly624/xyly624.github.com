@@ -103,7 +103,43 @@
 
 <div class="post">
     <h3 class="title">
-        <a href="/Golang/blog-to-golang.html">博客改用 Gor 引擎生成</a>
+        <a href="/Go/install-golang.html">安裝 Go 語言</a>
+        <span class="date">2013-06-03</span>
+    </h3>
+
+    <h3>前言</h3>
+
+<p>最近在學習 [Go][1] 語言,記錄下一些過程.第一步當然是安裝 [Go][1] 環境啦.</p>
+
+<h3>第一種安裝方式: 下載二進制包</h3>
+
+<h4>1. 下載 [Go 二進制包][2].</h4>
+
+<pre><code>#下載時需注意對應的操作系統及 CPU 架構.    
+aria2c 'https://go.googlecode.com/files/go1.1.linux-386.tar.gz'
+#解壓
+tar zxvf go1.1.linux-386.tar.gz go
+</code></pre>
+
+<h3>2. 配置:</h3>
+
+<pre><code># GO 的根路徑
+echo &quot;export GOROOT=$HOME/go&quot; &gt;&gt; .zshrc
+# GO 第三方包安裝路徑或項目路徑
+echo &quot;export GOPATH=$HOME/workspace/go&quot; &gt;&gt; .zshrc
+# 加入PATH
+echo &quot;export PATH=$GOROOT/bin:$GOPATH:$PATH&quot; &gt;&gt; .zshrc 
+</code></pre>
+
+
+    <div class="more">
+        <a href="/Go/install-golang.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
+        <a href="/Go/blog-to-golang.html">博客改用 Gor 引擎生成</a>
         <span class="date">2013-06-01</span>
     </h3>
 
@@ -113,13 +149,13 @@
 
 
     <div class="more">
-        <a href="/Golang/blog-to-golang.html" class="btn btn-info">閱讀全文</a>
+        <a href="/Go/blog-to-golang.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
 <div class="post">
     <h3 class="title">
-        <a href="/default/code-datatables-example-2.html">Datatables + Bootstrap 组合基础示例 2</a>
+        <a href="/code/code-datatables-example-2.html">Datatables + Bootstrap 组合基础示例 2</a>
         <span class="date">2013-05-05</span>
     </h3>
 
@@ -152,13 +188,13 @@
 
 
     <div class="more">
-        <a href="/default/code-datatables-example-2.html" class="btn btn-info">閱讀全文</a>
+        <a href="/code/code-datatables-example-2.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
 <div class="post">
     <h3 class="title">
-        <a href="/default/code-datatables-example-1.html">Datatables + Bootstrap 组合基础示例 1</a>
+        <a href="/code/code-datatables-example-1.html">Datatables + Bootstrap 组合基础示例 1</a>
         <span class="date">2013-04-30</span>
     </h3>
 
@@ -181,13 +217,13 @@
 
 
     <div class="more">
-        <a href="/default/code-datatables-example-1.html" class="btn btn-info">閱讀全文</a>
+        <a href="/code/code-datatables-example-1.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
 <div class="post">
     <h3 class="title">
-        <a href="/default/Maven-remove-all-failed-downloads.html">Maven無法下載依賴時的解決方案</a>
+        <a href="/Maven/Maven-remove-all-failed-downloads.html">Maven無法下載依賴時的解決方案</a>
         <span class="date">2013-04-14</span>
     </h3>
 
@@ -208,7 +244,7 @@ find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfe
 
 
     <div class="more">
-        <a href="/default/Maven-remove-all-failed-downloads.html" class="btn btn-info">閱讀全文</a>
+        <a href="/Maven/Maven-remove-all-failed-downloads.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
@@ -360,26 +396,6 @@ find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfe
 
     <div class="more">
         <a href="/Python/support-multiple-versions-of-Python-environment.html" class="btn btn-info">閱讀全文</a>
-    </div>
-</div>
-
-<div class="post">
-    <h3 class="title">
-        <a href="/Ubuntu/ubuntu-edit-hostname.html">在Ubuntu下修改主機名</a>
-        <span class="date">2013-02-27</span>
-    </h3>
-
-    <p>Ubuntu 12.04下修改主機名的步驟：<br />
-1. 編輯hostname中的主機名：<code>sudo vim /etc/hostname</code><br />
-2. 編輯hosts中的主機名：<code>sudo vim /etc/hosts</code><br />
-3. 重啓hostname服務：<code>sudo service hostname restart</code><br />
-4. 驗證：<code>hostname</code></p>
-
-<p>以上在Ubuntu 12.04 下測試通過。</p>
-
-
-    <div class="more">
-        <a href="/Ubuntu/ubuntu-edit-hostname.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 

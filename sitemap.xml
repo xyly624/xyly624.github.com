@@ -4,22 +4,27 @@
 		<loc>http://xyly624.github.io/</loc>
 	</url>
 	<url>
-		<loc>http://xyly624.github.io/Golang/blog-to-golang.html</loc>
+		<loc>http://xyly624.github.io/Go/install-golang.html</loc>
+		<lastmod>2013-06-03</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://xyly624.github.io/Go/blog-to-golang.html</loc>
 		<lastmod>2013-06-01</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://xyly624.github.io/default/code-datatables-example-2.html</loc>
+		<loc>http://xyly624.github.io/code/code-datatables-example-2.html</loc>
 		<lastmod>2013-05-05</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://xyly624.github.io/default/code-datatables-example-1.html</loc>
+		<loc>http://xyly624.github.io/code/code-datatables-example-1.html</loc>
 		<lastmod>2013-04-30</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://xyly624.github.io/default/Maven-remove-all-failed-downloads.html</loc>
+		<loc>http://xyly624.github.io/Maven/Maven-remove-all-failed-downloads.html</loc>
 		<lastmod>2013-04-14</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -74,12 +79,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://xyly624.github.io/Ubuntu/ubuntu-exaile.html</loc>
+		<loc>http://xyly624.github.io/Ubuntu/ubuntu-camera.html</loc>
 		<lastmod>2012-10-22</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://xyly624.github.io/Ubuntu/ubuntu-camera.html</loc>
+		<loc>http://xyly624.github.io/Ubuntu/ubuntu-exaile.html</loc>
 		<lastmod>2012-10-22</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
