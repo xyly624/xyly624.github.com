@@ -2,9 +2,9 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>安裝 Go 語言</title>
+    <title>讓編輯器支持 Go 語言</title>
   
-    <meta name="description" content="安裝 Go 語言">
+    <meta name="description" content="對編輯器進行設置來支持 Go 語言.">
   
     <meta name="author" content="星塵子">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,7 +93,7 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>安裝 Go 語言 </h1>
+  <h1>讓編輯器支持 Go 語言 </h1>
 </div>
 
 <div class="row">
@@ -107,22 +107,17 @@
 <li>
 <ul>
 <li><a href="#toc_0">前言</a></li>
-<li><a href="#toc_1">第一種安裝方式: 下載二進制包</a>
+<li><a href="#toc_1">安裝 gocode</a></li>
+<li><a href="#toc_2">配置: Sublime Text 2</a>
 <ul>
-<li><a href="#toc_2">1. 下載 <a href="https://code.google.com/p/go/downloads/list">Go 二進制包</a>.</a></li>
+<li><a href="#toc_3">安裝插件: GoSublime</a></li>
+<li><a href="#toc_4">配置 GoSublime 插件</a></li>
+<li><a href="#toc_5">簡單試用</a></li>
 </ul></li>
-<li><a href="#toc_3">2. 配置:</a></li>
-<li><a href="#toc_4">3. 驗證:</a></li>
-<li><a href="#toc_5">第二種安裝方式: 使用 gvm 插件</a>
+<li><a href="#toc_6">配置: Vim</a>
 <ul>
-<li><a href="#toc_6">1. 安裝 <a href="https://github.com/moovweb/gvm">gvm</a> 插件:</a></li>
-<li><a href="#toc_7">2. 通過 <a href="https://github.com/moovweb/gvm">gvm</a> 安裝 <a href="http://golang.org">go</a> :</a></li>
-<li><a href="#toc_8">3. 驗證:</a></li>
-</ul></li>
-<li><a href="#toc_9">經典的例子:</a>
-<ul>
-<li><a href="#toc_10">1. 代碼</a></li>
-<li><a href="#toc_11">2. 運行</a></li>
+<li><a href="#toc_7">前提</a></li>
+<li><a href="#toc_8">安裝 vim-gocode</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -131,108 +126,89 @@
 
 <h3 id="toc_0">前言</h3>
 
-<p>最近在學習 <a href="http://golang.org">Go</a> 語言,記錄下一些過程.第一步當然是安裝 <a href="http://golang.org">Go</a> 環境啦.</p>
+<p>學習 <a href="http://golang.org/">Go</a> 語言的第二步: 設置編輯器.讓編輯器能補全 <a href="http://golang.org/">Go</a> 的語法. 這裏記錄下 <a href="http://www.sublimetext.com/2">Sublime Text 2</a> 和 <a href="http://www.vim.org/">Vim</a> 的配置.</p>
 
-<h3 id="toc_1">第一種安裝方式: 下載二進制包</h3>
+<h3 id="toc_1">安裝 gocode</h3>
 
-<h4 id="toc_2">1. 下載 <a href="https://code.google.com/p/go/downloads/list">Go 二進制包</a>.</h4>
-
-<pre><code>#下載時需注意對應的操作系統及 CPU 架構.    
-aria2c 'https://go.googlecode.com/files/go1.1.linux-386.tar.gz'
-#解壓
-tar zxvf go1.1.linux-386.tar.gz go
-</code></pre>
-
-<h3 id="toc_3">2. 配置:</h3>
-
-<pre><code># GO 的根路徑
-echo &quot;export GOROOT=$HOME/go&quot; &gt;&gt; .zshrc
-# GO 第三方包安裝路徑或項目路徑
-echo &quot;export GOPATH=$HOME/workspace/go&quot; &gt;&gt; .zshrc
-# 加入PATH
-echo &quot;export PATH=$GOROOT/bin:$GOPATH/bin:$PATH&quot; &gt;&gt; .zshrc 
-</code></pre>
-
-<h3 id="toc_4">3. 驗證:</h3>
-
-<pre><code>#查看 go 是否可用
-which go
-#查看 go 版本
-go version 
-#查看 go 環境變量
-go env
-</code></pre>
-
-<h3 id="toc_5">第二種安裝方式: 使用 gvm 插件</h3>
-
-<h4 id="toc_6">1. 安裝 <a href="https://github.com/moovweb/gvm">gvm</a> 插件:</h4>
+<p><a href="https://github.com/nsf/gocode">gocode</a> 就是 <a href="http://golang.org/">Go</a> 的代碼自動補全工具.</p>
 
 <pre><code>#安裝
-bash &lt; &lt;(curl -s https://raw.github.com/moovweb/gvm/master/binscripts/gvm-installer)
-#配置
-echo '[[ -s &quot;$HOME/.gvm/scripts/gvm&quot; ]] &amp;&amp; source &quot;$HOME/.gvm/scripts/gvm&quot; ]]' &gt;&gt; .zshrc 
-source .zshrc
-#驗證
-gvm version 
+go get -u github.com/nsf/gocode
+#驗證:  
+which gocode
 </code></pre>
 
-<h4 id="toc_7">2. 通過 <a href="https://github.com/moovweb/gvm">gvm</a> 安裝 <a href="http://golang.org">go</a> :</h4>
+<h3 id="toc_2">配置: Sublime Text 2</h3>
 
-<pre><code>#列出所有支持的版本
-gvm listall
-#下載源碼編譯安裝 go1.1
-gvm install go1.1
-#列出已安裝版本
-gvm list
-#使用 go1.1,可設爲默認值(添加 --default 參數)
-gvm use go1.1 [--default]
-</code></pre>
+<p><a href="http://www.sublimetext.com/2">Sublime Text 2</a> 下 <a href="http://golang.org/">Go</a> 的自動補全功能由插件 <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> 調用 <a href="https://github.com/nsf/gocode">gocode</a> 來實現,所以要安裝 <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> 插件.</p>
 
-<h4 id="toc_8">3. 驗證:</h4>
+<h4 id="toc_3">安裝插件: GoSublime</h4>
 
-<p>請參考第一種方式中的驗證.</p>
+<ol>
+<li>打開 Package Control: <code>Ctrl + Shift + P</code> 或點擊 Preferences 菜單下的 Package Control ；</li>
+<li>然後輸入 <code>Install Package</code> 並按回車鍵；</li>
+<li>等待新界面出現後輸入 <code>GoSublime</code> 並按回車鍵.</li>
+</ol>
 
-<p><em>有關詳細文檔請訪問其 <a href="https://github.com/moovweb/gvm">gvm 官網</a>.</em></p>
+<h4 id="toc_4">配置 GoSublime 插件</h4>
 
-<h3 id="toc_9">經典的例子:</h3>
+<ol>
+<li>安裝完成後重啓 <a href="http://www.sublimetext.com/2">Sublime Text 2</a>;</li>
 
-<h4 id="toc_10">1. 代碼</h4>
+<li><p>點擊 Preferences -&gt; Package Settings -&gt; GoSublime 下的 Settings-Default 或 Settings-User 菜單項. 在打開的文件中添加如下配置後保存:</p>
 
-<pre><code>#hello.go
-package main
+<p>{
+&ldquo;env&rdquo;: {<br />
+    &ldquo;GOROOT&rdquo;: &ldquo;$HOME/go&rdquo;,<br />
+    &ldquo;GOPATH&rdquo;: &ldquo;$HOME/workspace/go&rdquo;<br />
+    }
+}</p></li>
+</ol>
 
-import (
-    &quot;fmt&quot;
-)
+<h4 id="toc_5">簡單試用</h4>
 
-func main(){
-    fmt.Printlf(&quot;Hello,世界!&quot;)
-}
-</code></pre>
+<ol>
+<li>打開一個 Go 代碼文件. 例如: hello.go</li>
+<li><code>Ctrl + b</code> 後會出現 Go Shell. 輸入 <code>go run hello.go</code> 後按回車鍵即可執行命令.</li>
+</ol>
 
-<h4 id="toc_11">2. 運行</h4>
+<p>配置完成.有關 <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> 的詳細使用請訪問 <a href="https://github.com/DisposaBoy/GoSublime/blob/master/USAGE.md">GoSublime 使用說明</a>.</p>
 
-<pre><code>#運行
-go run hello.go
+<h3 id="toc_6">配置: Vim</h3>
 
-#編譯後運行
-go build hello.go 
-./hello
-</code></pre>
+<p><a href="http://www.vim.org/">Vim</a> 下對 <a href="http://golang.org/">Go</a> 語言的自動補全功能也是由自動補全插件調用 <a href="https://github.com/nsf/gocode">gocode</a> 實現的,所以只要配置下 <a href="https://github.com/nsf/gocode">gocode</a> 就可以了.<br />
+我所知道的有兩種方法:<br />
+1. 可參考 <a href="https://github.com/nsf/gocode">gocode</a> 的自我說明中的方法對 <a href="http://www.vim.org/">Vim</a>進行配置.<br />
+2. 另外一種更簡單的就是是使用插件 <a href="https://github.com/undx/vim-gocode">vim-gocode</a>.這裏主要記錄這一方法.</p>
+
+<h4 id="toc_7">前提</h4>
+
+<p>安裝 <a href="https://github.com/undx/vim-gocode">vim-gocode</a> 前需安裝 <a href="https://github.com/gmarik/vundle/">Vundle</a>. <em>關於 <a href="https://github.com/gmarik/vundle/">Vundle</a> 怎麼安裝,請參考 <a href="https://github.com/gmarik/vundle/">Vundle 自我說明</a>.</em></p>
+
+<h4 id="toc_8">安裝 vim-gocode</h4>
+
+<ol>
+<li>編輯 <a href="http://www.vim.org/">Vim</a> 的配置文件: <code>vim ~/.vimrc</code>;</li>
+<li>添加: <code>Bundle 'undx/vim-gocode'</code>;</li>
+<li>更新: 保存配置文件後執行命令 <code>:BundleInstall!</code>.</li>
+</ol>
+
+<p>配置完成後可打開一個 <a href="http://golang.org/">Go</a> 代碼文件驗證下代碼補全功能.<br />
+<em>若沒有出現代碼補全功能,請確定是否安裝過 <a href="http://www.vim.org/">Vim</a> 代碼補全插件,例如: <a href="https://github.com/Valloric/YouCompleteMe">YouCompleteMe</a>.</em></p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/工具/Golang-edit.html" title="讓編輯器支持 Go 語言">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/Go/blog-to-golang.html" title="博客改用 Gor 引擎生成">Next &rarr;</a></li>
+            <li class="next"><a href="/Go/install-golang.html" title="安裝 Go 語言">Next &rarr;</a></li>
           
           
         </ul>
@@ -258,13 +234,13 @@ go build hello.go
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2013-06-03</span></div>
+    <div class="date"><span>2013-06-09</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#Go-ref">Go <span>2</span></a>
+  <a href="/categories/#%E5%B7%A5%E5%85%B7-ref">工具 <span>1</span></a>
 </li>
     
     </ul>
@@ -273,11 +249,27 @@ go build hello.go
     <ul class="tag_box">
     
       <li>
+  <a href="/tags/#Vim-ref">Vim <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Sublime_Text_2-ref">Sublime_Text_2 <span>1</span></a>
+</li>
+    
+      <li>
   <a href="/tags/#Go-ref">Go <span>2</span></a>
 </li>
     
       <li>
-  <a href="/tags/#gvm-ref">gvm <span>1</span></a>
+  <a href="/tags/#GoCode-ref">GoCode <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#%E6%8F%92%E4%BB%B6-ref">插件 <span>3</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#Vundle-ref">Vundle <span>1</span></a>
 </li>
     
     </ul>

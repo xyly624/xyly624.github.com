@@ -103,6 +103,44 @@
 
 <div class="post">
     <h3 class="title">
+        <a href="/工具/Golang-edit.html">讓編輯器支持 Go 語言</a>
+        <span class="date">2013-06-09</span>
+    </h3>
+
+    <h3>前言</h3>
+
+<p>學習 [Go][1] 語言的第二步: 設置編輯器.讓編輯器能補全 [Go][1] 的語法. 這裏記錄下 [Sublime Text 2][3] 和 [Vim][6] 的配置.</p>
+
+<h3>安裝 gocode</h3>
+
+<p>[gocode][2] 就是 [Go][1] 的代碼自動補全工具.</p>
+
+<pre><code>#安裝
+go get -u github.com/nsf/gocode
+#驗證:  
+which gocode
+</code></pre>
+
+<h3>配置: Sublime Text 2</h3>
+
+<p>[Sublime Text 2][3] 下 [Go][1] 的自動補全功能由插件 [GoSublime][4] 調用 [gocode][2] 來實現,所以要安裝 [GoSublime][4] 插件.</p>
+
+<h4>安裝插件: GoSublime</h4>
+
+<ol>
+<li>打開 Package Control: <code>Ctrl + Shift + P</code> 或點擊 Preferences 菜單下的 Package Control ；</li>
+<li>然後輸入 <code>Install Package</code> 並按回車鍵；</li>
+<li>等待新界面出現後輸入 <code>GoSublime</code> 並按回車鍵.</li>
+</ol>
+
+
+    <div class="more">
+        <a href="/工具/Golang-edit.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
         <a href="/Go/install-golang.html">安裝 Go 語言</a>
         <span class="date">2013-06-03</span>
     </h3>
@@ -128,7 +166,7 @@ echo &quot;export GOROOT=$HOME/go&quot; &gt;&gt; .zshrc
 # GO 第三方包安裝路徑或項目路徑
 echo &quot;export GOPATH=$HOME/workspace/go&quot; &gt;&gt; .zshrc
 # 加入PATH
-echo &quot;export PATH=$GOROOT/bin:$GOPATH:$PATH&quot; &gt;&gt; .zshrc 
+echo &quot;export PATH=$GOROOT/bin:$GOPATH/bin:$PATH&quot; &gt;&gt; .zshrc 
 </code></pre>
 
 
@@ -362,40 +400,6 @@ find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfe
 
     <div class="more">
         <a href="/Python/python-nameerror.html" class="btn btn-info">閱讀全文</a>
-    </div>
-</div>
-
-<div class="post">
-    <h3 class="title">
-        <a href="/Python/support-multiple-versions-of-Python-environment.html">設置一個支持多種版本的 Python 環境</a>
-        <span class="date">2013-03-05</span>
-    </h3>
-
-    <h1><a style="display: block;" name="起因" href="#起因"></a>起因</h1>
-
-<p>爲了以下目的才有了本文：<br />
-1. 學習 Python 3 。
-2. 使系統 Python 環境不再受污染。</p>
-
-<h1><a style="display: block;" name="前提" href="#前提"></a>前提</h1>
-
-<p>配置過程中需要用到以下軟件：<br />
-* Python 2.7.3 ( 通過<code>python -V</code>確認 )<br />
-* pip ( 通過 <code>pip help</code>確認 )<br />
-* curl ( 通過 <code>curl --help</code> 確認 )<br />
-* libsqlite3-dev ( 可選，若要 Python 支持 sqlite3 ，請先安裝 <code>sudo apt-get instll libsqlite3-dev</code> )
-* libssl-dev (可選，若要 Python 支持 ssl , 請先安裝 <code>sudo apt-get install libssl-dev</code> )</p>
-
-<p>若未安裝請參考 [Google][1] 安裝後繼續。</p>
-
-<h1><a style="display: block;" name="安裝-pythonz" href="#安裝-pythonz"></a>安裝 Pythonz</h1>
-
-<p>[Pythonz][2] 可以讓用戶在 $home 目錄下通過源碼自動構建和安裝多種版本的 Python ，其源自
-[pythonbrew][3] 。個人覺得 [Pythonz][2] 功能簡單就幫你安裝各種版本的 Python ，至少目前是這樣。</p>
-
-
-    <div class="more">
-        <a href="/Python/support-multiple-versions-of-Python-environment.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
