@@ -103,6 +103,49 @@
 
 <div class="post">
     <h3 class="title">
+        <a href="/生活/life-fruit.html">常見水果的營養成分</a>
+        <span class="date">2013-06-10</span>
+    </h3>
+
+    <h3>前言</h3>
+
+<p>前幾天,在[多看][1]下了本免費電子雜誌[天下美食][2].這期主題是&rdquo;水果&rdquo;,裏面有一章節講了下水果的營養成分,特此截了幾張圖記錄下也分享下.</p>
+
+<h3>升糖指數 (GI)</h3>
+
+<p>常見水果的[升糖指數][3]:<br />
+<img src="https://lh6.googleusercontent.com/-qfuk_3iI_DA/UbVEnqUtcUI/AAAAAAAAAbE/zM9kmF6EuQ4/w687-h373-no/t3.png" alt="常見水果的升糖指數" />
+</p>
+
+<h3>維生素 C 的含量</h3>
+
+<p>常見水果中的維生素 C 的含量:<br />
+<img src="https://lh3.googleusercontent.com/-sn2kUUZSv64/UbVEokIRo5I/AAAAAAAAAbM/h59YLtshf-A/w684-h409-no/t2.png" alt="常見水果中的維生素 C 的含量" />
+</p>
+
+<h3>β-胡蘿蔔素的含量</h3>
+
+<p>常見水果中 β-胡蘿蔔素的含量<br />
+<img src="https://lh6.googleusercontent.com/-yh87r3sDn3U/UbVEpZT61iI/AAAAAAAAAbU/4E36c29McWQ/w689-h317-no/t1.png" alt="常見水果中 β-胡蘿蔔素的含量" />
+</p>
+
+<h3>其他建議</h3>
+
+<ol>
+<li>吃最應季的水果,既營養又美味；<br /></li>
+<li>糖尿病患者可以吃水果,要選 GI 值低的；<br /></li>
+<li>嬰幼兒,老年人,孕婦等應儘量選用維生素 C 含量較高的水果；<br /></li>
+<li>多選用深顏色的水果.<br /></li>
+</ol>
+
+
+    <div class="more">
+        <a href="/生活/life-fruit.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
         <a href="/工具/Golang-edit.html">讓編輯器支持 Go 語言</a>
         <span class="date">2013-06-09</span>
     </h3>
@@ -370,37 +413,6 @@ find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfe
 
     <div class="more">
         <a href="/Python/python-requests-example.html" class="btn btn-info">閱讀全文</a>
-    </div>
-</div>
-
-<div class="post">
-    <h3 class="title">
-        <a href="/Python/python-nameerror.html">CERT_NONE is not defined</a>
-        <span class="date">2013-03-09</span>
-    </h3>
-
-    <h1><a style="display: block;" name="緣起" href="#緣起"></a>緣起</h1>
-
-<p>突然想學習下<a href="https://github.com/kennethreitz/requests">requests</a>，不過在安裝<a href="https://github.com/kennethreitz/requests">requests</a> 時卻報了這個錯誤：“NameError: name &lsquo;CERT_NONE&rsquo; is not defined”。<br />
-在<a href="www.google.com.hk/">Googole</a>上搜索之後才知道，<a href="https://github.com/kennethreitz/requests">requests</a>需要 ssl 的支持，源碼編譯安裝的 <a href="http://www.python.org/">Python</a>若需要提供 ssl 的支持，在編譯前需要系統已安裝了 <code>libssl-dev</code> 庫。<br />
-而我使用的是通過 <a href="https://github.com/saghul/pythonz">Pythonz</a>編譯安裝的<a href="http://www.python.org/">Python</a>，經驗證是未提供 ssl 的支持。（驗證方法見下文。）</p>
-
-<h1><a style="display: block;" name="解決方法" href="#解決方法"></a>解決方法</h1>
-
-<p>知道原因後就好辦了，解決方法如下：<br />
-1. 在系統中安裝必要的庫：<code>sudo apt-get install libssl-dev</code> ；<br />
-2. 刪除通過<a href="https://github.com/saghul/pythonz">Pythonz</a>安裝的 <a href="http://www.python.org/">Python</a>：<code>pythonz uninstall 2.7.3</code>；  <em>（詳細的安裝<a href="http://www.python.org/">Python</a>方法見<a href="http://xyly624.github.com/2013/03/05/support-multiple-versions-of-Python-environment/">上一篇博文</a>）</em><br />
-3. 重新編譯安裝<a href="http://www.python.org/">Python</a>：<code>pythonz install 2.7.3</code>；<br />
-4. 驗證 ssl ：<code>python -c &quot;import ssl&quot;</code>；（若未報錯即已支持；反之，請繼續<a href="www.google.com.hk/">Google</a>，我也愛莫能助了。）<br />
-5. 安裝 <a href="https://github.com/kennethreitz/requests">requests</a>：<code>pip install requests</code> 。</p>
-
-<p>希望對你有所幫助，特此分享之。</p>
-
-<p><em>本文的系統環境爲 Utubut 12.04 。</em></p>
-
-
-    <div class="more">
-        <a href="/Python/python-nameerror.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 

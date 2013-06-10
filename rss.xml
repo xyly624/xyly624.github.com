@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>星塵子記</title>
     <link>http://xyly624.github.io</link>
-    <pubDate>2013-06-10 10:39:23 +0800</pubDate>
+    <pubDate>2013-06-10 03:26:54 +0800</pubDate>
+    <item>
+      <title>常見水果的營養成分</title>
+      <link>http://xyly624.github.io/生活/life-fruit.html</link>
+      <pubDate>2013-06-10 12:00:00 +0800</pubDate>
+      <description>&#xA;&#xA;&lt;p&gt;&lt;h1&gt;目錄:&lt;/h1&gt;&lt;nav&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#toc_0&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#toc_1&#34;&gt;升糖指數 (GI)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#toc_2&#34;&gt;維生素 C 的含量&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#toc_3&#34;&gt;β-胡蘿蔔素的含量&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#toc_4&#34;&gt;其他建議&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/nav&gt;&lt;/p&gt;&#xA;&#xA;&lt;h3 id=&#34;toc_0&#34;&gt;前言&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;前幾天,在&lt;a href=&#34;http://www.duokan.com/&#34;&gt;多看&lt;/a&gt;下了本免費電子雜誌&lt;a href=&#34;http://book.duokan.com/%E5%A4%A9%E4%B8%8B%E7%BE%8E%E9%A3%9F_%E7%B2%BE%E5%8D%8E%E7%89%88%C2%B7No_1/b/36392#&#34;&gt;天下美食&lt;/a&gt;.這期主題是&amp;rdquo;水果&amp;rdquo;,裏面有一章節講了下水果的營養成分,特此截了幾張圖記錄下也分享下.&lt;/p&gt;&#xA;&#xA;&lt;h3 id=&#34;toc_1&#34;&gt;升糖指數 (GI)&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;常見水果的&lt;a href=&#34;http://zh.wikipedia.org/wiki/%E5%8D%87%E7%B3%96%E6%8C%87%E6%95%B0&#34;&gt;升糖指數&lt;/a&gt;:&lt;br /&gt;&#xA;&lt;img src=&#34;https://lh6.googleusercontent.com/-qfuk_3iI_DA/UbVEnqUtcUI/AAAAAAAAAbE/zM9kmF6EuQ4/w687-h373-no/t3.png&#34; alt=&#34;常見水果的升糖指數&#34; /&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&lt;h3 id=&#34;toc_2&#34;&gt;維生素 C 的含量&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;常見水果中的維生素 C 的含量:&lt;br /&gt;&#xA;&lt;img src=&#34;https://lh3.googleusercontent.com/-sn2kUUZSv64/UbVEokIRo5I/AAAAAAAAAbM/h59YLtshf-A/w684-h409-no/t2.png&#34; alt=&#34;常見水果中的維生素 C 的含量&#34; /&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&lt;h3 id=&#34;toc_3&#34;&gt;β-胡蘿蔔素的含量&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;常見水果中 β-胡蘿蔔素的含量&lt;br /&gt;&#xA;&lt;img src=&#34;https://lh6.googleusercontent.com/-yh87r3sDn3U/UbVEpZT61iI/AAAAAAAAAbU/4E36c29McWQ/w689-h317-no/t1.png&#34; alt=&#34;常見水果中 β-胡蘿蔔素的含量&#34; /&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&lt;h3 id=&#34;toc_4&#34;&gt;其他建議&lt;/h3&gt;&#xA;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;吃最應季的水果,既營養又美味；&lt;br /&gt;&lt;/li&gt;&#xA;&lt;li&gt;糖尿病患者可以吃水果,要選 GI 值低的；&lt;br /&gt;&lt;/li&gt;&#xA;&lt;li&gt;嬰幼兒,老年人,孕婦等應儘量選用維生素 C 含量較高的水果；&lt;br /&gt;&lt;/li&gt;&#xA;&lt;li&gt;多選用深顏色的水果.&lt;br /&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&#xA;&lt;p&gt;以上內容爲個人筆記僅供參考.&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>讓編輯器支持 Go 語言</title>
       <link>http://xyly624.github.io/工具/Golang-edit.html</link>
