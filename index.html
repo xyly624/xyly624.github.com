@@ -103,6 +103,43 @@
 
 <div class="post">
     <h3 class="title">
+        <a href="/工具/sublime-vim.html">在 Sublime Text 2 下開啓 Vim 模式</a>
+        <span class="date">2013-06-12</span>
+    </h3>
+
+    <h3>緣由</h3>
+
+<p>由於在 [Sublime Text 2][1] 下操作時會想起 [Vim][2] 下的鍵盤操作.一時興起在網絡上找了下,發現 [Sublime Text 2][1] 是支持類似 [Vim][2] 的鍵盤操作的.<br />
+在此分享下配置過程.</p>
+
+<h3>打開配置文件: &ldquo;Settings-User&rdquo;</h3>
+
+<ol>
+<li>鼠標操作: 點擊 &ldquo;Preferences&rdquo; 菜單下的 &ldquo;Settings-User&rdquo; 項;<br /></li>
+<li>鍵盤操作:<br />
+2.1 按下 <code>Ctrl + Shift + P</code> ( [Ubuntu][3] 下) 調出命令面板；<br />
+2.2 輸入 <code>settings user</code> 後選擇 &ldquo;Preferences: Settings-User&rdquo; 項,並按回車鍵確認；</li>
+</ol>
+
+<h3>編輯配置文件: &ldquo;Settings-User&rdquo;</h3>
+
+<p>在 &ldquo;Settings-User&rdquo; 配置文件中添加以下內容:</p>
+
+<pre><code>{
+    &quot;ignored_packages&quot;:[]
+}
+</code></pre>
+
+<p><em>若文件已有其他內容,則只需添加以上內容中的中間一行內容即可.</em></p>
+
+
+    <div class="more">
+        <a href="/工具/sublime-vim.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
         <a href="/生活/life-fruit.html">常見水果的營養成分</a>
         <span class="date">2013-06-10</span>
     </h3>
@@ -119,13 +156,13 @@
 
 <h3>維生素 C 的含量</h3>
 
-<p>常見水果中的維生素 C 的含量:<br />
+<p>常見水果中的 [維生素 C][4] 的含量:<br />
 <img src="https://lh3.googleusercontent.com/-sn2kUUZSv64/UbVEokIRo5I/AAAAAAAAAbM/h59YLtshf-A/w684-h409-no/t2.png" alt="常見水果中的維生素 C 的含量" />
 </p>
 
 <h3>β-胡蘿蔔素的含量</h3>
 
-<p>常見水果中 β-胡蘿蔔素的含量<br />
+<p>常見水果中 [β-胡蘿蔔素][5] 的含量<br />
 <img src="https://lh6.googleusercontent.com/-yh87r3sDn3U/UbVEpZT61iI/AAAAAAAAAbU/4E36c29McWQ/w689-h317-no/t1.png" alt="常見水果中 β-胡蘿蔔素的含量" />
 </p>
 
@@ -383,36 +420,6 @@ find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfe
 
     <div class="more">
         <a href="/Ubuntu/install-sigil-in-ubuntu.html" class="btn btn-info">閱讀全文</a>
-    </div>
-</div>
-
-<div class="post">
-    <h3 class="title">
-        <a href="/Python/python-requests-example.html">试用 requests 库</a>
-        <span class="date">2013-03-19</span>
-    </h3>
-
-    <h1><a style="display: block;" name="前提" href="#前提"></a>前提</h1>
-
-<p>本文中需要使用到 [requests][1] ，可用 <code>pip install requests</code> 进行安装。</p>
-
-<p><em>我在安装时碰到个问题，详见[上一篇][2] 博文。</em></p>
-
-<h1><a style="display: block;" name="例子：获取外网-ip-(返回-text-格式)" href="#例子：获取外网-ip-(返回-text-格式)"></a>例子：获取外网 IP (返回 text 格式)</h1>
-
-<p>主要代码如下：</p>
-
-<script src="https://gist.github.com/xyly624/5195763.js" > </script>
-
-<h1><a style="display: block;" name="例子：获取-ip-区域信息-(返回-json-格式)" href="#例子：获取-ip-区域信息-(返回-json-格式)"></a>例子：获取 IP 区域信息 (返回 json 格式)</h1>
-
-<p>主要代码如下：</p>
-
-<script src="https://gist.github.com/xyly624/5195982.js"> </script>
-
-
-    <div class="more">
-        <a href="/Python/python-requests-example.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
