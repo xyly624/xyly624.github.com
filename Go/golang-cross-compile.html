@@ -2,9 +2,9 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
-    <title>Datatables + Bootstrap 组合基础示例 2</title>
+    <title>交叉編譯 Go 程序</title>
   
-    <meta name="description" content="Datatables 使用 Bootstrap 框架的基本示例，包含的功能：分頁、排序、過濾、json 数据源、数据导出 (需 flash 支持) 、 自定义列 、 自定义分页选项。">
+    <meta name="description" content="跨平臺編譯 Go 程序">
   
     <meta name="author" content="星塵子">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,7 +93,7 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>Datatables + Bootstrap 组合基础示例 2 </h1>
+  <h1>交叉編譯 Go 程序 </h1>
 </div>
 
 <div class="row">
@@ -102,65 +102,92 @@
 
 <p><h3>目錄:</h3><nav>
 <ul>
-<li><a href="#toc_0">前言</a></li>
-<li><a href="#toc_1">示例 2</a>
+<li>
 <ul>
-<li><a href="#toc_2">功能</a></li>
-<li><a href="#toc_3">代码</a></li>
-<li><a href="#toc_4">使用的插件</a></li>
+<li>
+<ul>
+<li><a href="#toc_0">前言</a></li>
+<li><a href="#toc_1">生成目標平臺的包和工具</a></li>
+<li><a href="#toc_2">批量生成所有平臺的包和工具</a></li>
+<li><a href="#toc_3">驗證</a></li>
+<li><a href="#toc_4">附: 各平臺的 <code>GOOS</code> 和 <code>GOARCH</code> 的可選值</a></li>
+<li><a href="#toc_5">參考文檔</a></li>
 </ul></li>
-<li><a href="#toc_5">說明：</a></li>
+</ul></li>
 </ul>
 </nav></p>
 
-<h1 id="toc_0">前言</h1>
+<h3 id="toc_0">前言</h3>
 
-<p>示例 1 请见<a href="http://xyly624.github.io/2013/04/30/code-datatables-example-1/">上一篇博文</a>。</p>
+<p><a href="http://golang.org/">Go</a> 是支持交叉編譯的.即在 Ubuntu 下開發,再編譯成 Windows 下可以運行的程序,而且還可在 32 位或 64 位之間轉換.</p>
 
-<h1 id="toc_1">示例 2</h1>
+<h3 id="toc_1">生成目標平臺的包和工具</h3>
 
-<p>Datatables 插件使用 Bootstrap 框架的组合示例。</p>
+<p><a href="http://golang.org/">Go</a> 提供了不同平臺和架構需要用到的包和工具, 但是安裝 <a href="http://golang.org/">Go</a> 時默認只編譯了當前平臺所需要的包和工具.所以需要編譯目標平臺的包和工具.</p>
 
-<h2 id="toc_2">功能</h2>
+<pre><code>#切換至 GOROOT 下的 src 目錄
+cd GOROOT/src
+#編譯生成 Windows 64 位 平臺的包和工具
+CGO_ENABLED=0 GOOS= windows GOARCH= amd64 ./make.bash
+#等待編譯結束,
+#在 GOROOT/bin 目錄下會生成 windows_amd64 目錄,該目錄內含該平臺相應的工具
+cd GOROOT/bin/windows_amd64/ &amp;&amp; ls
+#在 GOROOT/pkg 目錄下會生成 windows_amd64 目錄,該目錄內含該平臺相應的包
+#目錄命名規則: 平臺 + &quot;_&quot; + 架構 
+cd GOROOT/pkg/windows_amd64 &amp;&amp; ls  
+</code></pre>
 
-<p>分页 / 排序 / 过滤 / json 数据源 / 数据导出 (需 flash 支持) / 自定义列 / 自定义分页选项。</p>
+<h3 id="toc_2">批量生成所有平臺的包和工具</h3>
 
-<h2 id="toc_3">代码</h2>
+<p>若想生成所有支持平臺的包和工具,一種方法是參照上一節介紹的方法分別替換<code>GOOS</code> 和 <code>GOARCH</code> 的值依次生成.或使用 <a href="https://github.com/">Github</a> 上的 <a href="https://github.com/davecheney/golang-crosscompile">golang-crosscompile</a> 工具:</p>
 
-<p>不多说，详细代码请<a href="http://runjs.cn/detail/eufiyjvh">戳</a>，界面效果请<a href="http://sandbox.runjs.cn/show/eufiyjvh">戳</a>。</p>
+<pre><code>#下載
+git clone git://github.com/davecheney/golang-crosscompile.git  
+#啓用
+source golang-crosscompile/crosscompile.bash  
+#編譯生成所有平臺的包和工具
+go-crosscompile-build-all
+</code></pre>
 
-<h2 id="toc_4">使用的插件</h2>
+<p><em>該工具我沒有試過進供參考.</em> 詳細說明請訪問<a href="http://dave.cheney.net/2012/09/08/an-introduction-to-cross-compilation-with-go">作者博客</a>.</p>
+
+<h3 id="toc_3">驗證</h3>
+
+<pre><code># 編譯生成目標平臺程序,以下代碼將生成 hello.exe
+CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build hello.go 
+# 生成成功後將 `hello.exe ` 複製至目標平臺下即可運行.
+</code></pre>
+
+<h3 id="toc_4">附: 各平臺的 <code>GOOS</code> 和 <code>GOARCH</code> 的可選值</h3>
+
+<pre><code>OS      ARCH            OS version
+linux   386/amd64/arm   &gt;= Linux 2.6
+darwin  386/amd64       OS X (Snow Leopard + Lion)
+freebsd 386/amd64       &gt;= FreeBSD 7
+windows 386/amd64       &gt;= Windows 2000
+</code></pre>
+
+<h3 id="toc_5">參考文檔</h3>
 
 <ul>
-<li><a href="http://jquery.com/">jQuery</a></li>
-<li><a href="https://github.com/twitter/bootstrap">Bootstrap</a></li>
-<li><a href="http://www.datatables.net/">Datatables</a></li>
-<li><a href="http://datatables.net/extras/tabletools/">TableTools</a></li>
-<li><a href="https://github.com/DataTables/Plugins">Datatablsables Plugins</a></li>
-<li><a href="https://github.com/terebentina/sco.js">sco</a></li>
+<li><a href="http://dave.cheney.net/2012/09/08/an-introduction-to-cross-compilation-with-go">An introduction to cross compilation with Go</a><br /></li>
+<li><a href="http://golang.tc/t/514bb70f320b522c5d000001">如何在32位linux下进行交叉编译？</a><br /></li>
+<li><a href="http://studygolang.com/topics/21">跨平台编译Go程序（交叉编译）</a><br /></li>
 </ul>
-
-<h1 id="toc_5">說明：</h1>
-
-<ol>
-<li>示例中的數據引用自 <a href="http://www.datatables.net/">Datatables</a>。<br /></li>
-<li>示例的代碼使用了 <a href="http://runjs.cn/">runjs</a> 的服務。<br /></li>
-<li>由于数据导出及打印功能需 Flash 支持，而 <a href="http://runjs.cn/">runjs</a> 不能上传 Flash,所以示例中删除了该功能的演示。请参考<a href="http://datatables.net/extras/tabletools/">TableTools</a> 自行添加。</li>
-</ol>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/Go/blog-to-golang.html" title="博客改用 Gor 引擎生成">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/code/code-datatables-example-1.html" title="Datatables + Bootstrap 组合基础示例 1">Next &rarr;</a></li>
+            <li class="next"><a href="/工具/sublime-vim.html" title="在 Sublime Text 2 下開啓 Vim 模式">Next &rarr;</a></li>
           
           
         </ul>
@@ -186,13 +213,13 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2013-05-05</span></div>
+    <div class="date"><span>2013-06-17</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#code-ref">code <span>3</span></a>
+  <a href="/categories/#Go-ref">Go <span>3</span></a>
 </li>
     
     </ul>
@@ -201,27 +228,7 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/tags/#code-ref">code <span>3</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#web-ref">web <span>2</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#Datatables-ref">Datatables <span>2</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#Bootstrap-ref">Bootstrap <span>2</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#runjs-ref">runjs <span>1</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#JavaScript-ref">JavaScript <span>2</span></a>
+  <a href="/tags/#Go-ref">Go <span>3</span></a>
 </li>
     
     </ul>

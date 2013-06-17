@@ -103,6 +103,38 @@
 
 <div class="post">
     <h3 class="title">
+        <a href="/Go/golang-cross-compile.html">交叉編譯 Go 程序</a>
+        <span class="date">2013-06-17</span>
+    </h3>
+
+    <h3>前言</h3>
+
+<p>[Go][1] 是支持交叉編譯的.即在 Ubuntu 下開發,再編譯成 Windows 下可以運行的程序,而且還可在 32 位或 64 位之間轉換.</p>
+
+<h3>生成目標平臺的包和工具</h3>
+
+<p>[Go][1] 提供了不同平臺和架構需要用到的包和工具, 但是安裝 [Go][1] 時默認只編譯了當前平臺所需要的包和工具.所以需要編譯目標平臺的包和工具.</p>
+
+<pre><code>#切換至 GOROOT 下的 src 目錄
+cd GOROOT/src
+#編譯生成 Windows 64 位 平臺的包和工具
+CGO_ENABLED=0 GOOS= windows GOARCH= amd64 ./make.bash
+#等待編譯結束,
+#在 GOROOT/bin 目錄下會生成 windows_amd64 目錄,該目錄內含該平臺相應的工具
+cd GOROOT/bin/windows_amd64/ &amp;&amp; ls
+#在 GOROOT/pkg 目錄下會生成 windows_amd64 目錄,該目錄內含該平臺相應的包
+#目錄命名規則: 平臺 + &quot;_&quot; + 架構 
+cd GOROOT/pkg/windows_amd64 &amp;&amp; ls  
+</code></pre>
+
+
+    <div class="more">
+        <a href="/Go/golang-cross-compile.html" class="btn btn-info">閱讀全文</a>
+    </div>
+</div>
+
+<div class="post">
+    <h3 class="title">
         <a href="/工具/sublime-vim.html">在 Sublime Text 2 下開啓 Vim 模式</a>
         <span class="date">2013-06-12</span>
     </h3>
@@ -388,38 +420,6 @@ find ~/.m2 -name &quot;*.lastUpdated&quot; -exec grep -q &quot;Could not transfe
 
     <div class="more">
         <a href="/生活/life-diary.html" class="btn btn-info">閱讀全文</a>
-    </div>
-</div>
-
-<div class="post">
-    <h3 class="title">
-        <a href="/Ubuntu/install-sigil-in-ubuntu.html">在 Ubuntu 下安装 Sigil</a>
-        <span class="date">2013-04-11</span>
-    </h3>
-
-    <p>最近购置了台 [kindle paperwhite][1] ，用下来感觉看书的效果真好。就是对有些书的格式不是很满意，为此想编辑下。<br />
-网上搜了下发现此款 ePub编辑器：[Sigil][2]  。</p>
-
-<p>[Sigil][2] 的简单介绍：<br />
-1. 一款免费开源的ePub编辑器<br />
-2. 跨平台：windows、linux、Mac<br />
-3. 完美支持UTF-16 ( 支持中文 )<br />
-4. 界面支持多语言：支持简体中文及繁体中文<br />
-详细的文档请访问 [Sigil][2] 。</p>
-
-<p>在此分享下在 Ubutnu  系统下的安装过程：<br />
-1. 添加源：<code>sudo add-apt-repository ppa:rgibert/ebook</code><br />
-2. 更新源：<code>sudo apt-fast update</code><br />
-3. 安装：<code>sudo apt-fast install sigil</code><br />
-4. 启动：<code>sigil</code> 或 &ldquo;应用程序 &ndash;&gt; 附件 &ndash;&gt; Sigil&rdquo;</p>
-
-<p>说明：[apt-fast][3] 是 <code>apt-get</code> 的加速工具，利用 <code>axel</code> 或 <code>aria2c</code> 进行下载。</p>
-
-<p><em>以上在Ubuntu 12.04 下測試通過。</em></p>
-
-
-    <div class="more">
-        <a href="/Ubuntu/install-sigil-in-ubuntu.html" class="btn btn-info">閱讀全文</a>
     </div>
 </div>
 
